@@ -5,7 +5,6 @@ from aiohttp import web
 import asyncio
 import logging
 import colorlog
-
 import traceback
 from dotenv import load_dotenv
 import os
