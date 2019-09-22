@@ -62,9 +62,13 @@
     <div class="album py-5 bg-light">
         <div class="container">
 
-            <div class="row justify-content-center user_posts">
-
+            <div class="row justify-content-center user_posts"></div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <button id="get_inst_photo" type="button" class="btn btn-outline-secondary">Больше постов</button>
+                </div>
             </div>
+
         </div>
     </div>
 
@@ -94,7 +98,22 @@
 <script>
    $(document).ready(function () {
         let token = '20661315763.de65ec3.be41e77ad7f3401985c6b920f1fee592',
-            count = 5;
+            count = 5,
+            max_id;
+
+        function formate_date (post_time_timstmp) {
+
+            let post_time_date = new Date(post_time_timstmp*1000);
+            let dd = post_time_date.getDate();
+            if (dd < 10) dd = '0' + dd;
+            let mm = post_time_date.getMonth() + 1;
+            if (mm < 10) mm = '0' + mm;
+            let yy = post_time_date.getFullYear();
+            let post_time = dd + '.' + mm + '.' + yy;
+            console.log(post_time);
+            return post_time;
+
+        }
 
         $.ajax({
             url: 'https://api.instagram.com/v1/users/self/media/recent',
@@ -102,7 +121,71 @@
             type: 'GET',
             data: {access_token: token, count: count},
             success: function(result){
+                let len_data = result.data.length;
+                max_id = result.data[len_data-1].id;
+                for( x in result.data ){
+                    let post_time_timstmp = parseInt(result.data[x].created_time);
+                    let post_time = formate_date (post_time_timstmp);
+                    $('.user_posts').append('<div class="col-md-8">\n' +
+                                '                    <div class="card mb-4 shadow-sm">\n' +
+                                '                        <div class=""><img src="'+result.data[x].images.standard_resolution.url+'"></div>\n' +
+                                '                        <div class="card-body">\n' +
+                                '                            <p class="card-text"><a>'+result.data[x].caption.text+'</a></p>\n' +
+                                '                            <div class="d-flex">\n' +
+                                '                                <small class="col-2 text-muted"><i class="mr-2 fa fa-heart"></i>' +
+                                '                                   <a>'+result.data[x].likes.count+'</a></small>\n' +
+                                '                                <small class="col-2 text-muted"><i class="mr-2 fa fa-comment"></i>' +
+                                '                                   <a>'+result.data[x].comments.count+'</a></small>\n' +
+                                '                                <small class="col-4 text-muted format="DD/MM/YYYY"><i class="mr-2 fa fa-calendar"></i>' +
+                                '                                   <a>'+post_time+'</a></small>\n' +
+                                '                            </div>\n' +
+                                '                        </div>\n' +
+                                '                    </div>\n' +
+                                '                </div>');
+                }
+                if (len_data < 5) {
+                    $('#get_inst_photo').hide();
+                }
+            },
+            error: function(result){
                 console.log(result);
+            }
+        });
+
+        $.ajax({
+            url: 'https://api.instagram.com/v1/users/self',
+            dataType: 'json',
+            type: 'GET',
+            data: {access_token: token},
+            success: function(result){
+                $('.about_user').append('<div class="row py-lg-5">\n' +
+                                '            <div class="col-lg-6 col-md-8 mx-auto">\n' +
+                                '                <h1 class="font-weight-light"><a>'+result.data.full_name+'</a></h1>\n' +
+                                '                <div class=""><img src="'+result.data.profile_picture+'"></div>\n' +
+                                '                <p class="lead text-muted"><a>Публикаций '+result.data.counts.media+'</a></p>\n' +
+                                '            </div>\n' +
+                                '        </div>');
+            },
+            error: function(result){
+                console.log(result);
+            }
+        });
+
+        $(document).on("click", '#get_inst_photo', get_inst_photo);
+
+        function get_inst_photo() {
+            let count = 5;
+
+            $.ajax({
+            url: 'https://api.instagram.com/v1/users/self/media/recent',
+            dataType: 'json',
+            type: 'GET',
+            data: {access_token: token, count: count, max_id: max_id},
+            success: function(result){
+                let len_data = result.data.length;
+                 if (len_data > 0) {
+                     max_id = result.data[len_data-1].id;
+                 }
                 for( x in result.data ){
                     $('.user_posts').append('<div class="col-md-8">\n' +
                                 '                    <div class="card mb-4 shadow-sm">\n' +
@@ -122,30 +205,15 @@
                                 '                </div>');
 
                 }
+                if (len_data < 5) {
+                    $('#get_inst_photo').hide();
+                }
             },
             error: function(result){
                 console.log(result);
             }
         });
-
-        $.ajax({
-            url: 'https://api.instagram.com/v1/users/self/media/recent',
-            dataType: 'json',
-            type: 'GET',
-            data: {access_token: token},
-            success: function(result){
-                $('.about_user').append('<div class="row py-lg-5">\n' +
-                                '            <div class="col-lg-6 col-md-8 mx-auto">\n' +
-                                '                <h1 class="font-weight-light"><a>'+result.data[0].user.full_name+'</a></h1>\n' +
-                                '                <div class=""><img src="'+result.data[0].user.profile_picture+'"></div>\n' +
-                                '                <p class="lead text-muted count_photo"></p>\n' +
-                                '            </div>\n' +
-                                '        </div>');
-            },
-            error: function(result){
-                console.log(result);
-            }
-        });
+        }
 
     });
 </script>
