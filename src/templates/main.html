@@ -92,7 +92,7 @@
         crossorigin="anonymous"></script>
 <script src="/static/jquery.min.js"></script>
 <script>
-    jQuery(function($){
+   $(document).ready(function () {
         let token = '20661315763.de65ec3.be41e77ad7f3401985c6b920f1fee592',
             count = 5;
 
@@ -124,36 +124,27 @@
                 }
             },
             error: function(result){
-                console.log(result); // пишем в консоль об ошибках
+                console.log(result);
             }
         });
 
-    });
-
-    jQuery(function($){
-            let token = '20661315763.de65ec3.be41e77ad7f3401985c6b920f1fee592',
-                count = 1;
-            $.ajax({
-                url: 'https://api.instagram.com/v1/users/self/media/recent',
-                dataType: 'json',
-                type: 'GET',
-                data: {access_token: token, count: count},
-                success: function(result){
-                    console.log(result);
-                    for( x in result.data ){
-                        $('.about_user').append('<div class="row py-lg-5">\n' +
-                                            '            <div class="col-lg-6 col-md-8 mx-auto">\n' +
-                                            '                <h1 class="font-weight-light"><a>'+result.data[x].user.full_name+'</a></h1>\n' +
-                                            '                <div class=""><img src="'+result.data[x].user.profile_picture+'"></div>\n' +
-                                            '                <p class="lead text-muted count_photo"></p>\n' +
-                                            '            </div>\n' +
-                                            '        </div>');
-
-                    }
-                },
-                error: function(result){
-                    console.log(result); // пишем в консоль об ошибках
-                }
+        $.ajax({
+            url: 'https://api.instagram.com/v1/users/self/media/recent',
+            dataType: 'json',
+            type: 'GET',
+            data: {access_token: token},
+            success: function(result){
+                $('.about_user').append('<div class="row py-lg-5">\n' +
+                                '            <div class="col-lg-6 col-md-8 mx-auto">\n' +
+                                '                <h1 class="font-weight-light"><a>'+result.data[0].user.full_name+'</a></h1>\n' +
+                                '                <div class=""><img src="'+result.data[0].user.profile_picture+'"></div>\n' +
+                                '                <p class="lead text-muted count_photo"></p>\n' +
+                                '            </div>\n' +
+                                '        </div>');
+            },
+            error: function(result){
+                console.log(result);
+            }
         });
 
     });
