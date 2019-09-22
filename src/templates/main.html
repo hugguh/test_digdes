@@ -55,38 +55,15 @@
 
 <main role="main">
 
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <div class="inst_profile_photo"></div>
-                <h1 class="font-weight-light">Album example</h1>
-                <p class="lead text-muted"></p>
-            </div>
-        </div>
+    <section class="py-5 text-center container about_user">
+
     </section>
 
     <div class="album py-5 bg-light">
         <div class="container">
 
-            <div class="row">
-                <div class="col-md-8">
+            <div class="row justify-content-center user_posts">
 
-                    <div class="card mb-4 shadow-sm">
-                        <div class="inst_post_photo"></div>
-                        <div class="card-body">
-                            <p class="card-text">Описание</p>
-
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">Кол-во лайков</small>
-                                <small class="text-muted">Кол-во комментов</small>
-                                <small class="text-muted">Список тегов</small>
-                                <small class="text-muted">Дата добавления дд.мм.гггг</small>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
     </div>
@@ -113,7 +90,74 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script src="/static/jquery.min.js"></script>
+<script>
+    jQuery(function($){
+        let token = '20661315763.de65ec3.be41e77ad7f3401985c6b920f1fee592',
+            count = 5;
 
+        $.ajax({
+            url: 'https://api.instagram.com/v1/users/self/media/recent',
+            dataType: 'json',
+            type: 'GET',
+            data: {access_token: token, count: count},
+            success: function(result){
+                console.log(result);
+                for( x in result.data ){
+                    $('.user_posts').append('<div class="col-md-8">\n' +
+                                '                    <div class="card mb-4 shadow-sm">\n' +
+                                '                        <div class=""><img src="'+result.data[x].images.standard_resolution.url+'"></div>\n' +
+                                '                        <div class="card-body">\n' +
+                                '                            <p class="card-text"><a>'+result.data[x].caption.text+'</a></p>\n' +
+                                '                            <div class="d-flex">\n' +
+                                '                                <small class="col-2 text-muted"><i class="mr-2 fa fa-heart"></i>' +
+                                '                                   <a>'+result.data[x].likes.count+'</a></small>\n' +
+                                '                                <small class="col-2 text-muted"><i class="mr-2 fa fa-comment"></i>' +
+                                '                                   <a>'+result.data[x].comments.count+'</a></small>\n' +
+                                '                                <small class="col-4 text-muted"><i class="mr-2 fa fa-calendar"></i>' +
+                                '                                   <a>'+result.data[x].caption.created_time+'</a></small>\n' +
+                                '                            </div>\n' +
+                                '                        </div>\n' +
+                                '                    </div>\n' +
+                                '                </div>');
+
+                }
+            },
+            error: function(result){
+                console.log(result); // пишем в консоль об ошибках
+            }
+        });
+
+    });
+
+    jQuery(function($){
+            let token = '20661315763.de65ec3.be41e77ad7f3401985c6b920f1fee592',
+                count = 1;
+            $.ajax({
+                url: 'https://api.instagram.com/v1/users/self/media/recent',
+                dataType: 'json',
+                type: 'GET',
+                data: {access_token: token, count: count},
+                success: function(result){
+                    console.log(result);
+                    for( x in result.data ){
+                        $('.about_user').append('<div class="row py-lg-5">\n' +
+                                            '            <div class="col-lg-6 col-md-8 mx-auto">\n' +
+                                            '                <h1 class="font-weight-light"><a>'+result.data[x].user.full_name+'</a></h1>\n' +
+                                            '                <div class=""><img src="'+result.data[x].user.profile_picture+'"></div>\n' +
+                                            '                <p class="lead text-muted count_photo"></p>\n' +
+                                            '            </div>\n' +
+                                            '        </div>');
+
+                    }
+                },
+                error: function(result){
+                    console.log(result); // пишем в консоль об ошибках
+                }
+        });
+
+    });
+</script>
 </body>
 
 </html>
