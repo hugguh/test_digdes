@@ -1,15 +1,41 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="py-5 text-center container about_user"></section>
+<section class="py-5 text-center container about_user">
+    <h1>Additional task</h1>
+</section>
 
-<div class="album py-5 bg-light">
-    <div class="container">
-        <div class="row justify-content-center user_posts"></div>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <button id="get_inst_photo" type="button" class="btn btn-outline-secondary">Больше постов</button>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8 mx-auto">
+            <div class="task_list_menu">
+                <label for="list_menu">Task 1.1. LIST MENU</label>
+                <p>Сверстайте меню, показанное на рисунке ниже, на HTML5 с помощью тегов &lt;ul&gt; и &lt;li&gt;.
+                    Ширина меню должна быть фиксирована и равна 200 px.</p>
+                <ul id="list_menu">
+                    <li>
+                        <a>Азу по-татарски</a>
+                    </li>
+                    <li>
+                        <a>Зразы</a>
+                    </li>
+                    <li>
+                        <a>Баранья грудинка, тушеная с картофелем</a>
+                    </li>
+                    <li>
+                        <a>Бефстроганов</a>
+                    </li>
+                    <li>
+                        <a>Бифштекс с яйцом</a>
+                    </li>
+                </ul>
             </div>
+            <div class="task_list_menu">
+                <label for="list_menu">Task 1.2. REGISTRATION FORM</label>
+                <p>Сверстайте форму регистрации, показанную на рисунке ниже. Ширина формы и её полей должна быть фиксирована.</p>
+
+            </div>
+
         </div>
     </div>
 </div>

@@ -1,0 +1,8 @@
+#list_menu {
+    width: 200px;
+    color: rgb(155,27,32);
+    background-color: rgb(246,226,141);
+    border: 1px solid rgb(0,0,0);
+    border-radius: 7px;
+    box-shadow: 3px 3px rgb(155,27,32);
+}
