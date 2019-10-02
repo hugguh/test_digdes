@@ -20,12 +20,21 @@ async def main_page(request):
     response = aiohttp_jinja2.render_template('main.html', request, data_page)
     return response
 
+async def additional_task(request):
+    app = request.app
+    log = app['logging']
+    log.warning("additional_task page open")
+    data_page = {"error": ""}
+    response = aiohttp_jinja2.render_template('additional_task.html', request, data_page)
+    return response
+
 
 def main():
     loop = asyncio.get_event_loop()
     app = web.Application()
     aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader('templates/'))  # setup jinja2 environment
     app.router.add_get('/', main_page)
+    app.router.add_get('/additional_task', additional_task)
     app.router.add_static('/static/', path='./static/', name='static')
     app.router.add_get('/{tail:.*}', main_page)
 
