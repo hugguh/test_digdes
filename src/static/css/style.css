@@ -1,8 +1,17 @@
 #list_menu {
+    font-family: "Times New Roman";
+    font-weight: 600;
+    font-size: 0.8em;
     width: 200px;
     color: rgb(155,27,32);
     background-color: rgb(246,226,141);
     border: 1px solid rgb(0,0,0);
     border-radius: 7px;
     box-shadow: 3px 3px rgb(155,27,32);
+    list-style-type: none;
+    padding: 0.3em 0.5em 0.2em 1em;
+}
+
+#list_menu li {
+    padding-bottom: 0.2em;
 }
