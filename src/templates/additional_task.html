@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8 mx-auto">
-            <div class="task_list_menu">
+            <div class="task">
                 <label for="list_menu">Task 1.1. LIST MENU</label>
                 <p>Сверстайте меню, показанное на рисунке ниже, на HTML5 с помощью тегов &lt;ul&gt; и &lt;li&gt;.
                     Ширина меню должна быть фиксирована и равна 200 px.</p>
@@ -20,7 +20,7 @@
                         <a>Зразы</a>
                     </li>
                     <li>
-                        <a>Баранья грудинка, тушеная с картофелем</a>
+                        <a>Баранья грудинка, тушенная с картофелем</a>
                     </li>
                     <li>
                         <a>Бефстроганов</a>
@@ -30,12 +30,31 @@
                     </li>
                 </ul>
             </div>
-            <div class="task_list_menu">
-                <label for="list_menu">Task 1.2. REGISTRATION FORM</label>
-                <p>Сверстайте форму регистрации, показанную на рисунке ниже. Ширина формы и её полей должна быть фиксирована.</p>
-
+            <div class="task">
+                <label for="registration">Task 1.2. REGISTRATION FORM</label>
+                <p>Сверстайте форму регистрации, показанную на рисунке ниже. Ширина формы и её полей должна быть
+                    фиксирована.</p>
+                <form id="registration">
+                    <div class="form_name"><h4>Регистрация</h4></div>
+                    <div class="user_email">
+                        <div><label for="email_input">E-mail</label></div>
+                        <div><input id="email_input" type="text"></div>
+                    </div>
+                    <div class="pass">
+                        <div><label for="pass_input">Пароль</label></div>
+                        <div><input id="pass_input" type="text"></div>
+                    </div>
+                    <div class="and_pass">
+                        <div><label for="pass_retry_input">Еще раз</label></div>
+                        <div><input id="pass_retry_input" type="text"></div>
+                    </div>
+                    <div class="send_button"><button id="send_regForm_button">Отправить</button></div>
+                </form>
             </div>
-
+            <div class="task">
+                <label for="dropdownMenu">Task 1.2. REGISTRATION FORM</label>
+                <p>Сверстайте ниспадающее меню, показанное на рисунках ниже.</p>
+            </div>
         </div>
     </div>
 </div>
