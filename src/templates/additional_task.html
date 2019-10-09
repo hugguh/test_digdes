@@ -1,61 +1,107 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="py-5 text-center container about_user">
-    <h1>Additional task</h1>
-</section>
+    <section class="py-5 text-center container about_user">
+        <h1>Additional task</h1>
+    </section>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-8 mx-auto">
-            <div class="task">
-                <label for="list_menu">Task 1.1. LIST MENU</label>
-                <p>Сверстайте меню, показанное на рисунке ниже, на HTML5 с помощью тегов &lt;ul&gt; и &lt;li&gt;.
-                    Ширина меню должна быть фиксирована и равна 200 px.</p>
-                <ul id="list_menu">
-                    <li>
-                        <a>Азу по-татарски</a>
-                    </li>
-                    <li>
-                        <a>Зразы</a>
-                    </li>
-                    <li>
-                        <a>Баранья грудинка, тушенная с картофелем</a>
-                    </li>
-                    <li>
-                        <a>Бефстроганов</a>
-                    </li>
-                    <li>
-                        <a>Бифштекс с яйцом</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="task">
-                <label for="registration">Task 1.2. REGISTRATION FORM</label>
-                <p>Сверстайте форму регистрации, показанную на рисунке ниже. Ширина формы и её полей должна быть
-                    фиксирована.</p>
-                <form id="registration">
-                    <div class="form_name"><h4>Регистрация</h4></div>
-                    <div class="user_email">
-                        <div><label for="email_input">E-mail</label></div>
-                        <div><input id="email_input" type="text"></div>
-                    </div>
-                    <div class="pass">
-                        <div><label for="pass_input">Пароль</label></div>
-                        <div><input id="pass_input" type="text"></div>
-                    </div>
-                    <div class="and_pass">
-                        <div><label for="pass_retry_input">Еще раз</label></div>
-                        <div><input id="pass_retry_input" type="text"></div>
-                    </div>
-                    <div class="send_button"><button id="send_regForm_button">Отправить</button></div>
-                </form>
-            </div>
-            <div class="task">
-                <label for="dropdownMenu">Task 1.2. REGISTRATION FORM</label>
-                <p>Сверстайте ниспадающее меню, показанное на рисунках ниже.</p>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8 mx-auto">
+                <div class="task">
+                    <label for="list_menu">Task 1.1. LIST MENU</label>
+                    <p>Сверстайте меню, показанное на рисунке ниже, на HTML5 с помощью тегов &lt;ul&gt; и &lt;li&gt;.
+                        Ширина меню должна быть фиксирована и равна 200 px.</p>
+                    <ul id="list_menu">
+                        <li>
+                            <a>Азу по-татарски</a>
+                        </li>
+                        <li>
+                            <a>Зразы</a>
+                        </li>
+                        <li>
+                            <a>Баранья грудинка, тушенная с картофелем</a>
+                        </li>
+                        <li>
+                            <a>Бефстроганов</a>
+                        </li>
+                        <li>
+                            <a>Бифштекс с яйцом</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="task">
+                    <label for="registration">Task 1.2. REGISTRATION FORM</label>
+                    <p>Сверстайте форму регистрации, показанную на рисунке ниже. Ширина формы и её полей должна быть
+                        фиксирована.</p>
+                    <form id="registration">
+                        <div class="form_name"><h4>Регистрация</h4></div>
+                        <div class="user_email">
+                            <div><label for="email_input">E-mail</label></div>
+                            <div><input id="email_input" type="text"></div>
+                        </div>
+                        <div class="pass">
+                            <div><label for="pass_input">Пароль</label></div>
+                            <div><input id="pass_input" type="text"></div>
+                        </div>
+                        <div class="and_pass">
+                            <div><label for="pass_retry_input">Еще раз</label></div>
+                            <div><input id="pass_retry_input" type="text"></div>
+                        </div>
+                        <div class="send_button">
+                            <button id="send_regForm_button">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="task">
+                    <label for="dropdownMenu">Task 1.3. DROPDOWN MENU</label>
+                    <p>Сверстайте ниспадающее меню, показанное на рисунках ниже.</p>
+                    <nav id="dropdownMenu">
+                        <div class="file">
+                            <div class="menu-bar">
+                                <ul>
+                                    <li>
+                                        <a href="example.html">Файл</a>
+                                        <ul>
+                                            <a class="fileDropdownName">Файл</a>
+                                            <li><a href="#">Новый</a></li>
+                                            <li><a href="#">Открыть</a></li>
+                                            <li><a href="#">Сохранить</a></li>
+                                            <li><a href="#">Закрыть</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="edit">
+                            <div class="menu-bar">
+                                <ul>
+                                    <li>
+                                    <li><a href="#">Правка</a>
+                                        <ul>
+                                            <a class="editDropdownName">Правка</a>
+                                            <li><a href="#">Вырезать</a></li>
+                                            <li><a href="#">Копировать</a></li>
+                                            <li><a href="#">Вставить</a></li>
+                                            <li><a href="#">Удалить</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="task4">
+                    <label for="pointingBlock">Task 1.4. POINTING BLOCK</label>
+                    <p>Сверстайте страницу как показано на рисунке ниже. Ширина блока резиновая и меняется в
+                        зависимости от размеров окна браузера. Указатель всегда располагается посередине блока,
+                        размеры указателя фиксированы.
+                    </p>
+                    <section id="pointingBlock">
+
+                    </section>
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
