@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% block head %}
+    {{ super() }}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endblock %}
+
 {% block content %}
 <section class="py-5 text-center container about_user"></section>
 
@@ -70,7 +76,7 @@
                     let post_time = formate_date(post_time_timstmp);
                     $('.user_posts').append('<div class="col-md-8">\n' +
                         '                    <div class="card mb-4 shadow-sm">\n' +
-                        '                        <div class="mx-auto"><img class="pt-4" style="border-radius: 0.25rem" src="' + result.data[x].images.standard_resolution.url + '" alt="' + result.data[x].caption.text + '"></div>\n' +
+                        '                        <div class="mx-auto"><img class="pt-4 adaptivPost" src="' + result.data[x].images.standard_resolution.url + '" alt="' + result.data[x].caption.text + '"></div>\n' +
                         '                        <div class="card-body">\n' +
                         '                            <p class="card-text pl-5"><a>' + result.data[x].caption.text + '</a></p>\n' +
                         '                            <div class="d-flex pl-5">\n' +
@@ -114,7 +120,7 @@
                         let post_time = formate_date(post_time_timstmp);
                         $('.user_posts').append('<div class="col-md-8">\n' +
                             '                    <div class="card mb-4 shadow-sm">\n' +
-                            '                        <div class="mx-auto"><img class="pt-4" style="border-radius: 0.25rem" src="' + result.data[x].images.standard_resolution.url + '" alt="' + result.data[x].caption.text + '"></div>\n' +
+                            '                        <div class="mx-auto"><img class="pt-4 adaptivPost" src="' + result.data[x].images.standard_resolution.url + '" alt="' + result.data[x].caption.text + '"></div>\n' +
                             '                        <div class="card-body">\n' +
                             '                            <p class="card-text pl-5"><a>' + result.data[x].caption.text + '</a></p>\n' +
                             '                            <div class="d-flex pl-5">\n' +

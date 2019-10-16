@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     {% block head %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="icon" href="/static/img/favicon.ico">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -17,37 +15,17 @@
 <header>
     {% block header %}
     <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4 class="text-white">About</h4>
-                    <p class="text-muted">This is example of my skills doing sites with using knowledge of JS, HTML5,
-                        CSS, Bootstrap 4, Python and Docker.</p>
-                </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Contact</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="https://twitter.com/double_spend" class="text-white" target="_blank">Follow on
-                            Twitter</a></li>
-                        <li><a href="https://www.facebook.com" class="text-white" target="_blank">Like on Facebook</a>
-                        </li>
-                        <li><a href="https://www.instagram.com/hugguh1234/" class="text-white" target="_blank">Like on
-                            Instagram</a></li>
-                        <li><a href="mailto:ivanmyasnikov@icloud.com" class="text-white">Email me</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
     </div>
     <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container d-flex justify-content-between">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark pl-0">
+        <div class="container d-flex justify-content-end">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark pl-0 justify-content-end">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav text-right">
                         <li class="nav-item">
                             <a class="nav-link" href="/">Album</a>
                         </li>
@@ -60,11 +38,6 @@
                     </ul>
                 </div>
             </nav>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
-                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
     </div>
     {% endblock %}
@@ -75,12 +48,29 @@
     {% endblock %}
 </main>
 
-<footer class="text-muted py-5">
+<footer class="text-muted bg-dark">
     {% block footer %}
+
+
     <div class="container">
-        <p class="float-right mb-1">
-            <a href="#">Back to top</a>
-        </p>
+        <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+                <h4 class="text-muted">About</h4>
+                <p class="text-muted">This is example of my skills doing sites with using knowledge of JS, HTML5,
+                    CSS, Bootstrap 4, Python and Docker.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+                <ul class="list-unstyled">
+                    <li><a href="https://twitter.com/double_spend" class="text-muted" target="_blank">Follow on
+                        Twitter</a></li>
+                    <li><a href="https://www.facebook.com" class="text-muted" target="_blank">Like on Facebook</a>
+                    </li>
+                    <li><a href="https://www.instagram.com/hugguh1234/" class="text-muted" target="_blank">Like on
+                        Instagram</a></li>
+                    <li><a href="mailto:ivanmyasnikov@icloud.com" class="text-muted">Email me</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
     {% endblock %}
 </footer>
