@@ -8,132 +8,132 @@
 {% endblock %}
 
 {% block content %}
-    <section class="py-5 text-center container about_user">
+    <section class="py-5 text-center container text-white">
         <h1>Flexbox Layout</h1>
     </section>
-
-    <div class="container task3">
-        <div class="navDiv">
-            <ul class="navigation">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="#">About me</a></li>
-                <li><a href="#">Partners</a></li>
-                <li class="inputArea"><input></li>
-                <li><a href="#">Sign in</a></li>
-            </ul>
+    <nav class="navigation">
+        <div class="first_nav_col">
+            <div class="nav_item">Home</div>
+            <div class="nav_item">Contacts</div>
+            <div class="nav_item">About me</div>
+            <div class="nav_item">Partners</div>
         </div>
-        <div class="container task3">
-            <div class="firstCol">
-                <div class="cardPicTop">
-                    <div class="topPicPostFrst">
-                        <img src="/static/img/1.jpg" class="imgAdaptiveTop" alt="first photo">
+        <div class="second_nav_col">
+            <div class="nav_input"><input class="input"></div>
+            <div class="nav_item">Sign in</div>
+        </div>
+    </nav>
+    <div class="container_flex">
+        <section class="small_column">
+            <article class="card_local">
+                <div>
+                    <div class="card_img">
+                        <div class="first_photo img_top" alt="first_photo"></div>
                     </div>
-                    <div class="cardLocalImg">
-                        <div class="header"><a class="head">Hello World</a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-                        <div class="cardFooter">
+                    <div class="card_header"><a class="card_head">Hello World</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="card_footer">
+                    <div><a>By Joe Smith</a></div>
+                    <div><a>42 comments</a></div>
+                </div>
+            </article>
+            <article class="card_local card_desc">
+                <div class="card_header"><a class="card_head">Hello World</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+                <div class="card_footer">
+                    <a>By Joe Smith</a>
+                    <a>42 comments</a>
+                </div>
+            </article>
+            <article class="card_local card_desc">
+                <div class="card_header"><a class="card_head">Hello World</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+                <div class="card_footer">
+                    <a>By Joe Smith</a>
+                    <a>42 comments</a>
+                </div>
+            </article>
+            <article class="card_local card_desc">
+                <div class="card_header"><a class="card_head">Hello World</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+                <div class="card_footer">
+                    <a>By Joe Smith</a>
+                    <a>42 comments</a>
+                </div>
+            </article>
+        </section>
+        <section class="big_column">
+            <article class="card_local side_img_card">
+                <div class="card_img side_img">
+                    <div class="second_photo img_right"></div>
+                </div>
+                <div class="card_desc side_text">
+                    <div class="card_header"><a class="card_head">Hello World</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur.</p></div>
+                    <div class="card_footer">
+                        <div><a>By Joe Smith</a></div>
+                        <div><a>42 comments</a></div>
+                    </div>
+                </div>
+            </article>
+            <div class="container_flex p-0">
+                <section class="big_column p-0">
+                    <article class="card_local">
+                        <div>
+                            <div class="card_img">
+                                <div class="third_photo img_top" alt="third_photo"></div>
+                            </div>
+                            <div class="card_header"><a class="card_head">Hello World</a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                        <div class="card_footer">
                             <div><a>By Joe Smith</a></div>
                             <div><a>42 comments</a></div>
                         </div>
-                    </div>
-                </div>
-                <div class="cardLocal cardFirstCol">
-                    <div class="header"><a class="head">Hello World</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-                    <div class="cardFooter">
-                        <a>By Joe Smith</a>
-                        <a>42 comments</a>
-                    </div>
-                </div>
-                <div class="cardLocal cardFirstCol">
-                    <div class="header"><a class="head">Hello World</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-                    <div class="cardFooter">
-                        <a>By Joe Smith</a>
-                        <a>42 comments</a>
-                    </div>
-                </div>
-                <div class="cardLocal cardFirstCol">
-                    <div class="header"><a class="head">Hello World</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-                    <div class="cardFooter">
-                        <a>By Joe Smith</a>
-                        <a>42 comments</a>
-                    </div>
-                </div>
-            </div>
-            <div class="secondCol">
-                <div class="sidePic">
-                    <div class="cardLocalImg">
-                        <div class="header"><a class="head">Hello World</a>
-                            <p class="textLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur.</p></div>
-                        <div class="cardFooter">
+                    </article>
+                </section>
+                <section class="small_column p-0">
+                    <article class="card_local card_desc">
+                        <div class="card_img">
+                            <div class="fours_photo img_top" alt="fours_photo"></div>
+                        </div>
+                        <div class="card_header"><a class="card_head">Hello World</a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+                        <div class="card_footer">
                             <a>By Joe Smith</a>
                             <a>42 comments</a>
                         </div>
-                    </div>
-                    <div class="sidePicPostScnd">
-                        <img src="/static/img/2.jpg" class="imgAdaptiveRight" alt="second photo">
-                    </div>
-                </div>
-                <div class="container task3">
-
-                    <div class="secFirstCol cardPicTop">
-                        <div class="topPicPostSecSec">
-                            <img src="/static/img/3.jpg" class="imgAdaptiveTop" alt="third photo">
+                    </article>
+                    <article class="card_local card_desc">
+                        <div class="card_header"><a class="card_head">Hello World</a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+                        <div class="card_footer">
+                            <a>By Joe Smith</a>
+                            <a>42 comments</a>
                         </div>
-                        <div class="cardLocalImgSecFrsrImg">
-                            <div class="header"><a class="head">Hello World</a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-                            <div class="cardFooter">
-                                <a>By Joe Smith</a>
-                                <a>42 comments</a>
-                            </div>
+                    </article>
+                    <article class="card_local card_desc">
+                        <div class="card_header"><a class="card_head">Hello World</a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+                        <div class="card_footer">
+                            <a>By Joe Smith</a>
+                            <a>42 comments</a>
                         </div>
-                    </div>
-                    <div class="secSecCol">
-                        <div class="cardPicTop">
-                            <div class="topPicPost">
-                                <img src="/static/img/4.jpg" class="imgAdaptiveTop" alt="fours photo">
-                            </div>
-                            <div class="cardLocalImg">
-                                <div class="header"><a class="head">Hello World</a>
-                                    <p>Lorem ipsum dolor sit amet.</p></div>
-                                <div class="cardFooter">
-                                    <a>By Joe Smith</a>
-                                    <a>42 comments</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cardLocal">
-                            <div class="header"><a class="head">Hello World</a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-                            <div class="cardFooter">
-                                <a>By Joe Smith</a>
-                                <a>42 comments</a>
-                            </div>
-                        </div>
-                        <div class="cardLocal">
-                            <div class="header"><a class="head">Hello World</a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-                            <div class="cardFooter">
-                                <a>By Joe Smith</a>
-                                <a>42 comments</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </article>
+                </section>
             </div>
-        </div>
+        </section>
     </div>
 {% endblock %}
