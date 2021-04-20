@@ -2,5 +2,5 @@ Jinja2==2.10.1
 aiohttp==3.3.2
 aiohttp_jinja2==1.0.0
 colorlog==3.1.4
-asyncpg==0.16.0
+asyncpg==0.21.0
 python-dotenv
